@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementsByName Example</title>
+    <style>
+        body { font-family: sans-serif; }
+        .option-group { margin-bottom: 15px; border: 1px solid #ccc; padding: 10px; }
+        label { margin-right: 10px; }
+        #result { margin-top: 15px; font-weight: bold; color: blue; }
+    </style>
+</head>
+<body>
+
+    <h2>Select Your Preferred Contact Method</h2>
+
+    <form id="contactForm">
+        <div class="option-group">
+            <p>How should we contact you?</p>
+            <!-- Note: All radio buttons in this group have the SAME name -->
+            
+            EMAIL : <input type="email" id="contact_email" name="contact_preference"><br><br>
+            
+            Phone:
+            <input type="number" id="contact_phone" name="contact_preference" > <br><br>
+            
+            SMS :
+            <input type="text" id="contact_sms" name="contact_preference"><br><br>
+            
+        </div>
+
+       
+         
+    </form>
+
+    <div id="result"></div>
+
+    <script type="text/javascript">
+        
+           
+            const preferenceRadios = document.getElementsByName("contact_preference");
+            console.log(preferenceRadios);
+            
+
+            
+           
+
+           
+        
+    </script>
+
+</body>
+</html>

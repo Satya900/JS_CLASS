@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" id="heading_main">
+        <p class="box">Hello</p>
+        <p class="box">Welcome User</p>
+    </div>
+
+
+    <script>
+        elements = document.getElementsByClassName("box"); 
+        console.log(elements);
+
+        console.log("Iterating with for loop:");
+        for(i = 0; i < elements.length; i++){
+            console.log(elements[i]);
+            elements[i].style.color = "Green";
+        }
+
+        // Convert HTMLCollection to an Array
+        ele_arr = Array.from(elements); 
+        console.log(ele_arr);
+
+        // Iterate over the array using forEach
+        console.log("Iterating with forEach:");
+        ele_arr.forEach((value) => {
+            console.log(value);
+            value.style.backgroundColor = "Red";
+            
+        });
+    </script>
+</body>
+</html>

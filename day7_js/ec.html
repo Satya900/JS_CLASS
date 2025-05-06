@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var x = 3; // Global Scope
+        a(); // undefined
+        b(); // undefined
+        function a(){
+            var x = 10;
+            console.log(x); // 10 LOCAL SCOPE
+        }
+
+        function b(){
+            var x = 100;
+            console.log(x); // 100  LOCAL SCOPE
+        }
+        console.log(x); // 3  GLOBAL SCOPE
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

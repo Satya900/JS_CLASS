@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live vs Static Collections</title>
+    <style>
+        body { font-family: sans-serif; }
+        #container { border: 1px solid blue; padding: 10px; margin-bottom: 10px; }
+        .item { background-color: lightgray; margin: 5px; padding: 5px; }
+        button { padding: 8px; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <p class="item">ITEM 1</p>
+        <p class="item">ITEM 2</p>
+    </div>
+    <button onclick="addItem()">Add Item & Check Collections</button>
+
+    <script type="text/javascript">
+        // --- Get collections BEFORE any additions ---
+        const liveCollection = document.getElementsByClassName("item");
+        const staticCollection = document.querySelectorAll(".item"); // Use querySelectorAll for collection comparison
+        const containerDiv = document.getElementById("container"); // More specific selector
+        let itemCount = 2; // Keep track of the next item number
+
+        console.log("--- INITIAL STATE ---");
+        console.log("getElementsByClassName ('item') [LIVE]:", liveCollection);
+        console.log("Initial length (live):", liveCollection.length); // Expected: 2
+        console.log("querySelectorAll ('.item') [STATIC]:", staticCollection);
+        console.log("Initial length (static):", staticCollection.length); // Expected: 2
+        console.log("----------------------");
+
+
+        function addItem(){
+            console.log("--- INSIDE addItem FUNCTION ---");
+
+            // Log the length AGAIN before adding, using the variables defined outside
+            // Note: The live collection length might already reflect changes if the browser updates it asynchronously,
+            // but the key difference is seen *after* the appendChild call.
+            console.log("Length BEFORE add (live):", liveCollection.length);
+            console.log("Length BEFORE add (static):", staticCollection.length);
+
+            // Create and add the new element
+            itemCount++; // Increment item count
+            const pElement = document.createElement("p"); // Create a <p> element
+            pElement.className = "item";                 // Assign the class
+            pElement.textContent = "ITEM " + itemCount;  // Set its text content
+
+            // Append the new element to the container div in the DOM
+            containerDiv.appendChild(pElement);
+            console.log(`New element <p class="item">ITEM ${itemCount}</p> added to the DOM.`);
+
+
+            // Log the length AFTER adding the element
+            console.log("Length AFTER add (live):", liveCollection.length); // Should increase
+            console.log("Length AFTER add (static):", staticCollection.length); // Should remain the same as initial
+            console.log("-----------------------------");
+
+            // You can also inspect the collections themselves again
+            console.log("Live Collection AFTER add:", liveCollection);
+            console.log("Static Collection AFTER add:", staticCollection);
+            console.log("=============================");
+        }
+    </script>
+</body>
+</html>

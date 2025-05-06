@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function loadContent(){
+            window.document.images[0].src = "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png";
+            window.document.forms[0].elements[1].textContent="Register";
+            window.document.forms[1].elements[1].textContent="Login";
+        }
+        
+
+    </script>
+</head>
+<body onload="loadContent()">
+    <div>
+        <img alt="" height="200" width="200" border="2">
+    </div>
+    <div>
+        <form>
+            <h3>Register</h3>
+           Username: <input type="text"> <button type="submit"></button></button>
+        </form>
+    </div>
+    <div>
+        <form>
+            <h3>Login</h3>
+           Email: <input type="text"> <button type="submit"></button>
+        </form>
+    </div>
+
+</body>
+</html>

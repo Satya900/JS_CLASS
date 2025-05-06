@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+                function highLighttext(){
+            liEle = document.getElementsByTagName("li");
+            [...liEle].forEach(function(value){
+                value.style.cssText = 'margin: 25px; color: goldenrod;';
+            })
+        }
+
+
+    </script>
+</head>
+<body>
+    <h2>My Shopping List</h2>
+    <uL id="my_list">
+        <li>IPHONE</li>
+        <li>SAMSUNG</li>
+        <li>ONEPLUS</li>
+    </uL>
+
+
+    <button type = "button" onclick = highLighttext()>Highlight Text</button>
+
+</body>
+</html>

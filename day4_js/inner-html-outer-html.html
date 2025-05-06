@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2></h2>
+    <p></p>
+
+    <button onclick="deleteRecord()">Delete</button>
+
+    <script>
+       function deleteRecord(){
+            console.log("User clicked delete button");
+            flag = confirm("Are you sure you want to delete this record?");
+            if(flag == true){
+                console.log("User clicked ok");
+               // document.querySelector('h2').innerHTML = "<h2 style='color: green;'>Records deleted successfully</h2>";
+               document.querySelector('h2').innerText = "Records deleted successfully";
+               console.log("Records updated successfully");
+            }
+            else{
+              //  document.querySelector('p').innerHTML = "<h3 style='color: red;'>Records not deleted</h3>";
+              console.log("User clicked cancel");
+              document.querySelector('p').innerText = "Records not deleted";
+              console.log("Records not updated successfully");
+            }
+       }
+    </script>
+</body>
+</html>
