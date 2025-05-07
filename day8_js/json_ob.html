@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let userDetails = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+        console.log(userDetails);
+        console.log(JSON.stringify(userDetails));
+        // Stringifies the object into a JSON string
+        // JSON.stringify() converts a JavaScript object or value to a JSON string.
+
+
+        let jsonString = '{"name":"John", "age":30, "city":"New York"}';
+        let userDetail = JSON.parse(jsonString);
+        // Parses the JSON string into a JavaScript object
+        // JSON.parse() converts a JSON string into a JavaScript object.
+        console.log(userDetail);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
