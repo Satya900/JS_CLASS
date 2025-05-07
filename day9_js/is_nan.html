@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        let age = prompt("Enter Age");
+
+        // if(age == null){
+        //     console.log("No Age Entered");
+        // } 
+        // else if(age == " "){
+        //     console.log("Please enter the right age to proceed");
+        // }
+        // else if(isNaN(age)){
+        //     console.log("Invalid Age");
+        // } 
+        // else {
+        //     console.log("Age Entered: " + age);
+        // }
+
+
+        //  first only converting to number and then checking for NaN
+        // let age = prompt("Enter Age");
+        // let ageNum = Number(age); // Convert to number
+        // if (isNaN(ageNum)) {
+        //     console.log("Invalid Age");
+        // } else {
+        //     console.log("Age Entered: " + ageNum);
+        // }
+
+
+        // trying with Number.isNaN
+        let ageNum = Number(age); // Convert to number
+        if (Number.isNaN(ageNum)) {
+            console.log("Invalid Age");
+        } else {
+            console.log("Age Entered: " + ageNum);
+        }
+
+
+        // Number.isNaN() is a method that determines whether the passed value is NaN and its type is Number.
+        // It is a more reliable way to check for NaN values, as it does not coerce the value to a number.
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

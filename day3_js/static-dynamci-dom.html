@@ -20,9 +20,9 @@
 
     <script type="text/javascript">
         // --- Get collections BEFORE any additions ---
-        const liveCollection = document.getElementsByClassName("item");
-        const staticCollection = document.querySelectorAll(".item"); // Use querySelectorAll for collection comparison
-        const containerDiv = document.getElementById("container"); // More specific selector
+        let liveCollection = document.getElementsByClassName("item");
+        let staticCollection = document.querySelectorAll(".item"); // Use querySelectorAll for collection comparison
+        let containerDiv = document.getElementById("container"); // More specific selector
         let itemCount = 2; // Keep track of the next item number
 
         console.log("--- INITIAL STATE ---");
@@ -44,7 +44,7 @@
 
             // Create and add the new element
             itemCount++; // Increment item count
-            const pElement = document.createElement("p"); // Create a <p> element
+            let pElement = document.createElement("p"); // Create a <p> element
             pElement.className = "item";                 // Assign the class
             pElement.textContent = "ITEM " + itemCount;  // Set its text content
 
