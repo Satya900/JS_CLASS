@@ -8,6 +8,10 @@
 </head>
 <body>
     <dl>
+        <dt>User Name</dt>
+        <dd>
+            <input type="text" name="username" id="textUserName" onblur="changeUpperCase()">
+        </dd>
         <dt>OTP</dt>
         <dd>
             <input type="text" name="otp" id="textOTP" onblur="validateOTP()">
@@ -31,6 +35,12 @@
                 validateMSG.innerHTML = "Invalid OTP";
                 validateMSG.style.color = "red";
             }
+        }
+
+        function changeUpperCase(){
+            // convert to upper case
+            const UserName = document.getElementById("textUserName");
+            UserName.value = UserName.value.toUpperCase();
         }
     </script>
 </body>
