@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let typeDashboard = prompt("Enter type of dashboard:");
+        let labelName = prompt("Enter label name:");
+        let type = prompt("Enter type:");
+        let template = `
+        <h1>${typeDashboard}</h1>
+        <dl>
+            <dt>
+            ${labelName}
+        </dt>
+        <dd>
+            <input type="${type}">
+        </dd>
+        </dl>
+        <button type='submit'>Register</button>
+        `;
+        
+
+        document.write(template);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
