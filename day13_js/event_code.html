@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function deleteItems(){
+        const listItems = document.getElementById("namesList");
+        listItems.removeChild(listItems.lastElementChild);
+
+        // check if the list is empty
+        // if (listItems.children.length === 0) {
+        //     const message = document.createElement("p");
+        //     message.textContent = "No items left in the list.";
+        //     document.body.appendChild(message);
+        // }
+
+
+        // if there is one element disable the delete button
+        if (listItems.children.length === 1) {
+            const button = document.querySelector("button");
+            button.disabled = true;
+            button.textContent = "No more items to delete";
+        }
+    }
+</script>
+<body>
+    <ul id="namesList">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Node.js</li>
+
+    </ul>
+
+    <button onclick="deleteItems()">DELETE</button>
+
+</body>
+</html>

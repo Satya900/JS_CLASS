@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name List App</title>
+    <script type="text/javascript">
+        function addNames() {
+            const namesInput = document.getElementById("nameInput");
+            const nameData = namesInput.value.trim();
+
+            const namesList = document.getElementById("namesList");
+            const li = document.createElement("li");
+            li.textContent = nameData.toUpperCase();
+            namesList.appendChild(li);
+
+            namesInput.value = "";
+            updateButtonStates();
+            namesInput.focus();
+        }
+
+        function resetNames() {
+            const namesList = document.getElementById("namesList");
+            namesList.innerHTML = "";
+            document.getElementById("nameInput").value = "";
+            updateButtonStates();
+            document.getElementById("nameInput").focus();
+        }
+
+        function updateButtonStates() {
+            const nameInput = document.getElementById("nameInput");
+            const resetBtn = document.getElementById("resetBtn");
+            const addBtn = document.getElementById("addBtn");
+            const namesList = document.getElementById("namesList");
+
+            addBtn.disabled = nameInput.value.trim() === "";
+            resetBtn.disabled = namesList.children.length === 0;
+        }
+
+        window.onload = function () {
+            updateButtonStates();
+        }
+    </script>
+</head>
+<body>
+    <h1>Name List Manager</h1>
+    <input type="text" id="nameInput" placeholder="Enter NAME" oninput="updateButtonStates()">
+    <button onclick="addNames()" id="addBtn">Add Names</button>
+    <button onclick="resetNames()" id="resetBtn">Reset Names</button>
+    <ul id="namesList">
+        <!-- Names will be added here -->
+    </ul>
+</body>
+</html>
