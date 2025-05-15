@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div>
+        <p id="username"></p>
+        <p id="domain"></p>
+    </div>
+
+
+    <script>
+        let str = prompt("Enter EMAIL ID");
+        let atIndex = str.indexOf("@");
+        let username = str.slice(0, atIndex);
+        let domain = str.slice(atIndex + 1);
+        document.getElementById("username").innerText = `The USERNAME is : ${username}`;
+        document.getElementById("domain").innerText = `The DOMAIN is : ${domain}`;
+
+    </script>
+</body>
+</html>

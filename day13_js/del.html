@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    
+
+    <script>
+        let str = "Home|About|Contact|Services|Blog";
+        let output = str.split("|");
+
+        let result = function(output){
+            let ul = document.createElement("ul");
+            output.forEach(function(item) {
+                let li = document.createElement("li");
+                li.textContent = item;
+                ul.appendChild(li);
+            });
+            document.body.appendChild(ul);
+        }
+        result(output);
+        
+    </script>
+</body>
+</html>
