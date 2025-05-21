@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="card"><br>
+    <input type="text" id="cvv"><br>
+    <input type="date" id="expiry"><br>
+    <button onclick="cardValidate()">PAY</button>
+
+    <div id="msg_container">
+
+    </div>
+
+    <script>
+        function cardValidate(){
+            var card = document.getElementById("card").value;
+            var cvv = document.getElementById("cvv").value;
+            var expiry = document.getElementById("expiry").value;
+            const year = new Date(expiry).getFullYear();
+            console.log(year);
+            const msg = document.getElementById("msg_container");
+            msg.innerHTML = "";
+
+            if(card == "444777666"){
+            console.log("Valid card");
+            if(cvv == "123" && year >= 2025 ){
+                console.log("Valid CVV and Expiry");
+                msg.innerHTML = "<h1>Payment Successful</h1>";
+                msg.style.backgroundColor = "green";
+                msg.style.color = "white";
+                msg.style.padding = "10px";
+                msg.style.textAlign = "center";
+            } else{
+                console.log("Invalid CVV or Expiry");
+                msg.innerHTML = "<h1>Invalid CVV or Expiry</h1>"
+                msg.style.backgroundColor = "red";
+                msg.style.color = "white";
+                msg.style.padding = "10px";
+                msg.style.textAlign = "center";
+            }
+        } else{
+            console.log("Invalid card");
+            msg.innerHTML = "<h1>Invalid card</h1>"
+            msg.style.backgroundColor = "red";
+            msg.style.color = "white";
+            msg.style.padding = "10px";
+            msg.style.textAlign = "center";
+        }
+        }
+
+       
+    </script>
+</body>
+</html>

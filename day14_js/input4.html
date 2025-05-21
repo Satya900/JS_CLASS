@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ternary Operator UI</title>
+    <!-- Bootstrap Icons (optional, for button icons) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <script type="text/javascript">
+        // 1️⃣ Toggle the sort icon
+        function toggleButton() {
+            const btn = document.getElementById("sortBtn");
+            // If current icon is sort-down, change to sort-up; else switch back
+            btn.className = btn.className == 'bi bi-sort-alpha-down' 
+                ? 'bi bi-sort-alpha-up' 
+                : 'bi bi-sort-alpha-down';
+        }
+
+        // 2️⃣ Change stock status text
+        function changeStatus() {
+            const checkBox = document.getElementById("stockCheckBox");
+            const msg = document.getElementById("msg");
+            // If checked, show 'In Stock', else 'Out of Stock'
+            msg.textContent = checkBox.checked ? 'In Stock' : 'Out of Stock';
+        }
+
+        // 3️⃣ Toggle image display and button text
+        function showImg() {
+            const btn = document.getElementById("btnStatus");
+            const img = document.getElementById("poster");
+            // Toggle button text
+            btn.textContent = btn.textContent == 'SHOW' ? 'HIDE' : 'SHOW';
+            // Toggle image visibility
+            img.style.display = img.style.display == 'none' ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body style="font-family: sans-serif; padding: 20px;">
+
+    <!-- 1️⃣ Toggle Button Icon -->
+    <h3>Toggle Sort Icon</h3>
+    <button class="bi bi-sort-alpha-down" onclick="toggleButton()" id="sortBtn"></button>
+
+    <hr>
+
+    <!-- 2️⃣ Checkbox to change stock status -->
+    <h3>Stock Status</h3>
+    <input type="checkbox" id="stockCheckBox" onchange="changeStatus()">
+    <span id="msg">Out of Stock</span>
+
+    <hr>
+
+    <!-- 3️⃣ Show/Hide Image -->
+    <h3>Image Toggle</h3>
+    <button onclick="showImg()" id="btnStatus">SHOW</button><br><br>
+    <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Poster" width="100" height="100" 
+         style="display: none;" id="poster">
+
+</body>
+</html>

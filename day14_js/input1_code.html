@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="male" value="MALE" onchange="enablebutton()">MALE<br>
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="female" value="FEMALE" onchange="enablebutton()">FEMALE
+  <br>
+  <button type="submit" class="btn btn-primary" onclick="genderValue()" disabled>SUBMIT</button>
+
+
+  <script>
+    function genderValue(){
+      const male = document.getElementById("male");
+      const female = document.getElementById("female");
+      if(male.checked){
+        console.log(male.value);
+      } else if(female.checked){
+        console.log(female.value);
+      }
+    }
+    function enablebutton(){
+      const button = document.querySelector("button");
+      button.disabled = false;
+    }
+  </script>
+</body>
+</html>

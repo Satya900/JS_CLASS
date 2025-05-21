@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="card_number" placeholder="Card Number" onblur="cardValidate()"><br>
+
+    <div id="cvv_container" style="display: none;">
+        <input type="text" id="cvv" placeholder="CVV" disabled><br>
+    </div>
+
+
+    <script>
+        function cardValidate(){
+            const cardNumber = document.getElementById("card_number").value;
+            const cvvContainer = document.getElementById("cvv_container");
+            const cvv = document.getElementById("cvv").value;
+
+            if(cardNumber == "444777666"){
+                cvvContainer.style.display = "block";
+                cvv.disabled = false;
+            }else{
+                alert("Invalid card number");
+            }
+        }
+    </script>
+</body>
+</html>
