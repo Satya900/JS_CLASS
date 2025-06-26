@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Info</title>
+</head>
+<body>
+    <script>
+        var product = {
+            productName: "SAMSUNG GALAXY S25",
+            productQuantity: 2,
+            productPrice: 25000,
+            isAvailable: true,
+            total: function() {
+                return this.productQuantity * this.productPrice;
+            },
+            print: function() {
+                document.write(
+                    `
+                    Product name is ${this.productName}<br>
+                    Product quantity is ${this.productQuantity}<br>
+                    Product price is ${this.productPrice.toLocaleString('en-IN', { style: 'currency', currency: 'INR' })}<br>
+                    Is product available? ${this.isAvailable}<br>
+                    Total price is ${this.total().toLocaleString('en-IN', { style: 'currency', currency: 'INR' })}<br>
+                    `
+                );
+            }
+        };
+
+        product.productQuantity = parseInt(prompt("Enter product quantity: "));
+        product.productPrice = parseInt(prompt("Enter product price: "));
+
+        product.print();
+    </script>
+</body>
+</html>

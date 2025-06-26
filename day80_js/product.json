@@ -1,0 +1,40 @@
+[
+    {
+    "Title":"Apple iphone 15 (Blue, 128 GB)",
+    "price": 799.99,
+    "features": [
+        "128 GB Storage",
+        "15.49 cm (6.1 inch) Super Retina XDR Display",
+        "12MP+12MP| 12MP Front Camera",
+        "A16 Bionic Chip with 6-Core CPU",
+        "1 year warranty for phone and 6 months for accessories"
+    ],
+    "Rating":{
+        "Rate": 4.5,
+        "Count":"24,010 ratings",
+        "Reviews":"4,010 reviews"
+    },
+    "image":"../iphone.png"
+
+},
+{
+    "Title":"Apple iphone 16 (Blue, 128 GB)",
+    "price": 799.99,
+    "features": [
+        "128 GB Storage",
+        "15.49 cm (6.1 inch) Super Retina XDR Display",
+        "12MP+12MP| 12MP Front Camera",
+        "A16 Bionic Chip with 6-Core CPU",
+        "1 year warranty for phone and 6 months for accessories"
+    ],
+    "Rating":{
+        "Rate": 4.5,
+        "Count":"24,010 ratings",
+        "Reviews":"4,010 reviews"
+    },
+    "image":"../iphone.png"
+
+}
+]
+
+
