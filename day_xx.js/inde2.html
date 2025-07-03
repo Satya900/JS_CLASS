@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+    
+
+    <script type="text/javascript">
+        function doTask(task){
+            if(task == "login"){
+                return `
+                <dl>
+                    <dt>Username</dt>
+                    <dd><input type="text" name="username" /></dd>
+                    <dt>Password</dt>
+                    <dd><input type="password" name="password" /></dd>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </dl>
+                `
+            }
+            else{
+                return `
+                <dl>
+                    <dt>Email</dt>
+                    <dd><input type="email" name="email" /></dd>
+                    <dt>Password</dt>
+                    <dd><input type="password" name="password" /></dd>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </dl>
+                `
+            }
+        }
+
+        let result = doTask(prompt("LOGIN | REGISTER"))
+        document.body.innerHTML += result;
+
+    </script>
+</body>
+</html>

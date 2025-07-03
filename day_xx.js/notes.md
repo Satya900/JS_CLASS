@@ -46,3 +46,22 @@ let myFunction = function myFunc() {
 myFunction(); // This will work
 myFunc(); // This will throw an error because myFunc is not defined in the global scope
 ```
+
+## CALLBACK FUNCTIONS
+
+A callback function is a function that is passed as an argument to another function and is executed after some operation has been completed. It allows for asynchronous programming in JavaScript.
+
+```javascript
+function fetchData(callback) {
+    setTimeout(() => {
+        const data = { id: 1, name: "John Doe" };
+        callback(data);
+    }, 1000);
+}
+
+fetchData((result) => {
+    console.log("Data received:", result);
+});
+```
+
+Note: Finally block can be used to execute code after try/catch, regardless of the outcome.

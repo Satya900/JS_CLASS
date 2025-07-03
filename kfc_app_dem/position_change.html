@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="btnRight">Move Right</button>
+    <button id="btnLeft">Move Left</button> <br>
+    <div style="margin-top: 10px;">
+    <img id="iphoneImage" src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="iPhone" style="width: 100px; height: 100px;">
+
+    </div>
+
+
+
+    <script>
+        var position = 0;
+        document.getElementById('btnRight').addEventListener('click',function(){
+            position += 10;
+            document.getElementById('iphoneImage').style.marginLeft = position + 'px';
+        })
+    </script>
+    
+</body>
+</html>

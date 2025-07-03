@@ -23,6 +23,12 @@
         "document-title": "off"
       }
     ],
-    "axe/language": "off"
+    "axe/language": "off",
+    "axe/structure": [
+      "default",
+      {
+        "dlitem": "off"
+      }
+    ]
   }
 }

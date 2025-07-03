@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Data</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Prompt the user to enter a URL
+        let url = prompt("Enter the URL");
+
+        // Function to fetch data asynchronously
+        async function fetchData(url) {
+            try {
+                // Validate the URL
+                if (url === 'https://fakestoreapi.com/products') {
+                    // Fetch data from the API
+                    let response = await fetch(url);
+
+                    // Check if the response is OK (status 200)
+                    if (!response.ok) {
+                        throw new Error("Network response was not OK");
+                    }
+
+                    // Parse the JSON data
+                    let data = await response.json();
+                    console.log("Data fetched successfully:", data);
+                } else {
+                    throw new Error("Invalid URL");
+                }
+            } catch (error) {
+                // Handle errors
+                console.error("Error:", error.message);
+            }
+        }
+
+        // Call the fetchData function
+        fetchData(url);
+    </script>
+</body>
+</html>
