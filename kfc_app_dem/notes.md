@@ -15,6 +15,3 @@ const element = React.createElement(
 In this example, the `style` prop is set using an object with a JavaScript expression. The text "Hello React" is passed as the children of the `h1` element.
 
 ![alt text](image.png)
-
-
-
