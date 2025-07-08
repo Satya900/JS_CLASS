@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Form using dl dt dd 
+
+    <form>
+        <dl>
+            <dt>Username</dt>
+            <dd>
+                <input type="text" id="textUsername" placeholder="Enter your username">
+            </dd>
+        </dl>
+        <p id="error-message"></p>
+    </form>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            const input = document.getElementById('textUsername');
+            const errorMsg = document.getElementById('error-message');
+            let usersList = [];
+
+            input.addEventListener('keyup', function() {
+                let username = this.value.trim();
+                if (!username) {
+                    errorMsg.textContent = '';
+                    return;
+                }
+                let found = false;
+                for (const user of usersList) {
+                    if (!user.userName) continue; // skip if userName is missing
+                    if (user.userName === username) {
+                        found = true;
+                        break;
+                    }
+                }
+                errorMsg.textContent = found ? 'Username is valid' : 'Username is not valid';
+            });
+
+            const url = '../../08-7-2025/username_valid.json';
+            fetch(url)
+            .then((response) => response.json())
+            .then((users)=>{
+                usersList = users;
+            });
+        });
+    </script>
+</body>
+</html>

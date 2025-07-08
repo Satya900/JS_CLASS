@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 3 attempts by a user then prompt contact admin
+        const maxAttempts = 3;
+        let attemptsMade = 0;
+        let authenticated = false;
+
+        while (attemptsMade < maxAttempts) {
+            let userName = prompt('Enter your Name');
+            if (userName === 'sachin') {
+                authenticated = true;
+                break;
+            } else {
+                attemptsMade++;
+            }
+        }
+
+        if (authenticated) {
+            console.log('Authentication successful');
+        } else {
+            console.log('Contact Admin');
+        }
+    </script>
+    
+</body>
+</html>
